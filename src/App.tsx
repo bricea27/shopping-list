@@ -7,6 +7,13 @@ function App() {
 
   const handleSearch = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event?.target?.value ?? '';
+
+    // Only proceed with the request if the query is at least 2 characters long
+    if (query.length < 2) {
+      setSearchResults([]);
+      return;
+    }
+
     const response = await fetch(`https://api.frontendeval.com/fake/food/${query}`)
     setSearchResults(await response.json());
   }
