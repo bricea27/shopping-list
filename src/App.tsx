@@ -1,9 +1,15 @@
 import { useState } from 'react'
 
 import './App.css'
+import { useDebounce } from './hooks';
 
 function App() {
   const [searchResults, setSearchResults] = useState<string[]>([]);
+
+  const debouncedCallback = useDebounce(async (query: string) => {
+    const response = await fetch(`https://api.frontendeval.com/fake/food/${query}`);
+    setSearchResults(await response.json())
+  }, 500);
 
   const handleSearch = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event?.target?.value ?? '';
@@ -14,8 +20,7 @@ function App() {
       return;
     }
 
-    const response = await fetch(`https://api.frontendeval.com/fake/food/${query}`)
-    setSearchResults(await response.json());
+    debouncedCallback(query);
   }
 
   return (
@@ -27,7 +32,7 @@ function App() {
       <section>
         <input onChange={handleSearch} type="text" placeholder="Search for an item" />
         <ul>
-        {searchResults.map(result => <li>{result}</li>)}
+          {searchResults.map(result => <li>{result}</li>)}
         </ul>
       </section>
     </main>
