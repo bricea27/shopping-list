@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Results } from './components';
+import { Result, Results } from './components';
 import { useDebounce } from './hooks';
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
       <section>
         <input onChange={handleSearch} type="text" placeholder="Search for an item" />
         <Results>
-          {searchResults.map(result => <li>{result}</li>)}
+          {searchResults.map(result => <Result>{result}</Result>)}
         </Results>
       </section>
     </main>
