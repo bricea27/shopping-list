@@ -1,30 +1,16 @@
-# React + TypeScript + Vite
+# Shopping List
+This repository is my solution to frontendeval's [Shopping List prompt](https://frontendeval.com/questions/shopping-list).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requirements
+- Entering more than two characters in the input should show a list of partially matching items (starting with the same characters)
+- Clicking an item in the list of partially matching items should add it to the list
+- Adding the same item multiple times is allowed
+- Pressing the 'X' next to an item should delete it from the list
+- Pressing the '✓' next to an item should check it off (i.e. strikethrough text and partially grey out text/buttons)
+- Pressing the '✓' next to a checked-off item should uncheck it again
 
-Currently, two official plugins are available:
+## Technologies
+For my solution, I've chosen to use [Vite](https://vitejs.dev/guide/) with [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/docs/). Vite is incredibly fast and easy to spin up, and can be easily deployed to [Vercel](https://vercel.com/) for a simple hosting solution.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## TODOs
+I tried to limit myself to the 90 minute time constraint. If I had more time, I would have liked to...
