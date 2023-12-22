@@ -1,19 +1,24 @@
 .search {
 	display: flex;
 	flex-direction: column;
+	position: relative;
+	width: 300px;
 }
 
-input {
+input, ul {
 	padding: 0.5rem;
-	margin: 0.5rem;
 	border: 1px solid #ccc;
-	border-radius: 0.5rem;	
+	border-radius: 0.5rem;
 }
 
 ul.results {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	position: absolute;
+	top: 100%;
+	margin-top: 0.25rem;
+	width: 100%;
 }
 
 li.result {

@@ -32,9 +32,11 @@ function App() {
       </header>
       <Search>
         <SearchInput onChange={handleSearch} placeholder="Search for an item" />
-        <SearchResults>
-          {searchResults.map(result => <SearchResult>{result}</SearchResult>)}
-        </SearchResults>
+        {searchResults.length > 0 && (
+          <SearchResults>
+            {searchResults.map(result => <SearchResult>{result}</SearchResult>)}
+          </SearchResults>
+        )}
       </Search>
     </main>
   )
