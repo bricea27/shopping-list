@@ -19,6 +19,7 @@ ul.results {
 	top: 100%;
 	margin-top: 0.25rem;
 	width: 100%;
+	background: #fff;
 }
 
 li.result {

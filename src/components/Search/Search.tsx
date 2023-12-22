@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const Search = ({ children }: Props): React.ReactElement => {
-	return <section className={styles.search}>{children}</section>
+	return <div className={styles.search}>{children}</div>
 }
