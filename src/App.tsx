@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Result, Results } from './components';
+import { Search, SearchInput, SearchResult, SearchResults } from './components';
 import { useDebounce } from './hooks';
 
 function App() {
@@ -30,12 +30,12 @@ function App() {
         <h1>Shop-it</h1>
         <p>Search for an item, add items, check them off, and delete them!</p>
       </header>
-      <section>
-        <input onChange={handleSearch} type="text" placeholder="Search for an item" />
-        <Results>
-          {searchResults.map(result => <Result>{result}</Result>)}
-        </Results>
-      </section>
+      <Search>
+        <SearchInput onChange={handleSearch} placeholder="Search for an item" />
+        <SearchResults>
+          {searchResults.map(result => <SearchResult>{result}</SearchResult>)}
+        </SearchResults>
+      </Search>
     </main>
   )
 }
