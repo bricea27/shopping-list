@@ -3,9 +3,11 @@ import { useState } from 'react'
 import './App.css'
 import { Search, SearchInput, SearchResult, SearchResults } from './components';
 import { useDebounce } from './hooks';
+import type { Item } from './utils/types';
 
 function App() {
   const [searchResults, setSearchResults] = useState<string[]>([]);
+  const [items, setItems] = useState<Item[]>([]);
 
   const debouncedCallback = useDebounce(async (query: string) => {
     const response = await fetch(`https://api.frontendeval.com/fake/food/${query}`);
@@ -24,6 +26,23 @@ function App() {
     debouncedCallback(query);
   }
 
+  const handleAddItem = (name: string) => {
+    setItems(prev => {
+      const match = prev.find(item => item.name === name);
+
+      // If the item already exists, increment its count
+      if (match) {
+        return prev.map(item => ({
+          ...item,
+          count: item.name === name ? item.count + 1 : item.count
+        }))
+      }
+
+      // Otherwise, simply add the item to the beginning of the list
+      return [{ name, checked: false, count: 1 }, ...prev];
+    })
+  }
+
   return (
     <main>
       <header>
@@ -33,11 +52,23 @@ function App() {
           <SearchInput onChange={handleSearch} placeholder="Search for an item" />
           {searchResults.length > 0 && (
             <SearchResults>
-              {searchResults.map(result => <SearchResult>{result}</SearchResult>)}
+              {searchResults.map(result => (
+                <SearchResult
+                  key={`search-result-${result}`}
+                  onClick={() => handleAddItem(result)}
+                >
+                  {result}
+                </SearchResult>
+              ))}
             </SearchResults>
           )}
         </Search>
       </header>
+      {items.length > 0 && (
+        <ul>
+          {items.map(({ checked, count, name }) => <li>{name} - {checked} - {count}</li>)}
+        </ul>
+      )}
     </main>
   )
 }
