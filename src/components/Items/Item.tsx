@@ -2,14 +2,13 @@ import styles from './Items.module.css'
 
 interface Props {
 	children: React.ReactNode;
-	label: React.ReactNode;
+	onClick: () => void;
 }
 
-export const Item = ({ children, label }: Props): React.ReactElement => {
+export const Item = ({ children, onClick }: Props): React.ReactElement => {
 	return (
-		<li className={styles.item}>
+		<li className={styles.item} onClick={onClick}>
 			{children}
-			<span>{label}</span>
 		</li>
 	)
 }

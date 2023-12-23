@@ -7,12 +7,29 @@ ul.items {
 li.item {
 	cursor: pointer;
 	padding: 1rem;
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
 }
 
 li.item:hover {
 	background: #fafafa;
 }
 
-li.item > span {
-	margin-left: 1rem;
+li.item p {
+	margin: 0 0 0 1rem;
+}
+
+li.item:hover > span.delete {
+	opacity: 1;
+	margin-left: auto;
+}
+
+li.item > span.delete {
+	opacity: 0;
+}
+
+li.item > p.checked {
+	text-decoration: line-through;
+	opacity: 0.5;
 }

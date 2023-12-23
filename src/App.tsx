@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Item, Items, Search, SearchInput, SearchResult, SearchResults } from './components';
+import { Item, ItemCheckbox, ItemDelete, ItemLabel, Items, Search, SearchInput, SearchResult, SearchResults } from './components';
 import { useDebounce } from './hooks';
 import type { Item as ItemType } from './utils/types';
 
@@ -43,6 +43,17 @@ function App() {
     })
   }
 
+  const handleCheckItem = (name: string) => {
+    setItems(prev => prev.map(item => ({
+      ...item,
+      checked: item.name === name ? !item.checked : item.checked
+    })))
+  }
+
+  const handleDeleteItem = (name: string) => {
+    setItems(prev => prev.filter(item => item.name !== name))
+  }
+
   return (
     <main>
       <header>
@@ -66,7 +77,15 @@ function App() {
       </header>
       {items.length > 0 && (
         <Items>
-          {items.map(item => <Item label={`${item.name} (${item.count})`}>{item.checked ? '✅' : '⬜'}</Item>)}
+          {items.map(item => (
+            <Item key={`item-${item.name}`} onClick={() => handleCheckItem(item.name)}>
+              <ItemCheckbox checked={item.checked} />
+              <ItemLabel checked={item.checked}>
+                {item.name} ({item.count})
+              </ItemLabel>
+              <ItemDelete onClick={() => handleDeleteItem(item.name)} />
+            </Item>
+          ))}
         </Items>
       )}
     </main>
