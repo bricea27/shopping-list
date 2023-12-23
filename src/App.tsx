@@ -66,7 +66,7 @@ function App() {
       </header>
       {items.length > 0 && (
         <Items>
-          {items.map(({ name }) => <Item>{name}</Item>)}
+          {items.map(item => <Item label={`${item.name} (${item.count})`}>{item.checked ? '✅' : '⬜'}</Item>)}
         </Items>
       )}
     </main>

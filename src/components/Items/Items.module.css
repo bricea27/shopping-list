@@ -3,3 +3,16 @@ ul.items {
 	max-width: 800px;
 	margin: 0 auto;
 }
+
+li.item {
+	cursor: pointer;
+	padding: 1rem;
+}
+
+li.item:hover {
+	background: #fafafa;
+}
+
+li.item > span {
+	margin-left: 1rem;
+}
