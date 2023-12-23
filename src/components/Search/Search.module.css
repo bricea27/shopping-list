@@ -6,16 +6,13 @@
 	margin: 0.5rem auto;
 }
 
-input, ul {
+input, ul.results {
 	padding: 0.5rem;
 	border: 1px solid #ccc;
 	border-radius: 0.5rem;
 }
 
 ul.results {
-	list-style: none;
-	padding: 0;
-	margin: 0;
 	position: absolute;
 	top: 100%;
 	margin-top: 0.25rem;
@@ -24,6 +21,7 @@ ul.results {
 }
 
 li.result {
+	cursor: pointer;
 	text-align: left;
 	padding: 0.5rem;
 }

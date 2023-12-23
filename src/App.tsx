@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Search, SearchInput, SearchResult, SearchResults } from './components';
+import { Item, Items, Search, SearchInput, SearchResult, SearchResults } from './components';
 import { useDebounce } from './hooks';
-import type { Item } from './utils/types';
+import type { Item as ItemType } from './utils/types';
 
 function App() {
   const [searchResults, setSearchResults] = useState<string[]>([]);
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<ItemType[]>([]);
 
   const debouncedCallback = useDebounce(async (query: string) => {
     const response = await fetch(`https://api.frontendeval.com/fake/food/${query}`);
@@ -65,9 +65,9 @@ function App() {
         </Search>
       </header>
       {items.length > 0 && (
-        <ul>
-          {items.map(({ checked, count, name }) => <li>{name} - {checked} - {count}</li>)}
-        </ul>
+        <Items>
+          {items.map(({ name }) => <Item>{name}</Item>)}
+        </Items>
       )}
     </main>
   )
