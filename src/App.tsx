@@ -27,10 +27,8 @@ function App() {
   return (
     <main>
       <header>
-        <hgroup>
-          <h1>Shop-it</h1>
-          <p>Search for an item, add items, check them off, and delete them!</p>
-        </hgroup>
+        <h1>Shop-it</h1>
+        <p>Search for an item, add items, check them off, and delete them!</p>
         <Search>
           <SearchInput onChange={handleSearch} placeholder="Search for an item" />
           {searchResults.length > 0 && (
