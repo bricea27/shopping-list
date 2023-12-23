@@ -15,3 +15,6 @@ For my solution, I've chosen to use [Vite](https://vitejs.dev/guide/) with [Reac
 
 ## TODOs
 I tried to limit myself to the 90 minute time constraint. If I had more time, I would have liked to...
+- Add some color and better typographical hierarchy to the UI
+- Add some CSS transitions to the hover effects / check + uncheck status
+- Improve the UX of the dropdown, such as closing it on ESC keypress or clickaway
