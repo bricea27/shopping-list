@@ -17,6 +17,6 @@ For my solution, I've chosen to use [Vite](https://vitejs.dev/guide/) with [Reac
 I tried to limit myself to the 90 minute time constraint. If I had more time, I would have liked to...
 - Add some color and better typographical hierarchy to the UI
 - Add some CSS transitions to the hover effects / check + uncheck status
-- Improve the UX of the dropdown, such as closing it on ESC keypress or clickaway
+- Improve the UX and accessiblity of the dropdown, such as closing it on ESC keypress or clickaway, and implementing keyboard arrow navigation
 - Improve performance by preventing unnecessary re-renders of unchanged list items
 - Add a CSS framework, like TailwindCSS - this probably would have saved me time had I chosen to install it from the beginning, rather than leverage css modules
