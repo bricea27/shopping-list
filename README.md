@@ -13,8 +13,10 @@ This repository is my solution to frontendeval's [Shopping List prompt](https://
 ## Technologies
 For my solution, I've chosen to use [Vite](https://vitejs.dev/guide/) with [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/docs/). Vite is incredibly fast and easy to spin up, and can be easily deployed to [Vercel](https://vercel.com/) for a simple hosting solution.
 
-## TODOs
+## Todos
 I tried to limit myself to the 90 minute time constraint. If I had more time, I would have liked to...
 - Add some color and better typographical hierarchy to the UI
 - Add some CSS transitions to the hover effects / check + uncheck status
 - Improve the UX of the dropdown, such as closing it on ESC keypress or clickaway
+- Improve performance by preventing unnecessary re-renders of unchanged list items
+- Add a CSS framework, like TailwindCSS - this probably would have saved me time had I chosen to install it from the beginning, rather than leverage css modules
