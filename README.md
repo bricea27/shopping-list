@@ -1,6 +1,9 @@
 # Shopping List
 This repository is my solution to frontendeval's [Shopping List prompt](https://frontendeval.com/questions/shopping-list).
 
+## Demo
+You can view a hosted version of this repository, [here](https://shopping-list-nu-indol.vercel.app/);
+
 ## Requirements
 - [x] Entering more than two characters in the input should show a list of partially matching items (starting with the same characters)
 - [x] Clicking an item in the list of partially matching items should add it to the list
